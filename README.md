@@ -14,7 +14,8 @@ Note: If you don't have a Microsoft Azure subscription you can get a FREE trial 
 
 Instructions:
 
-- Create a Storage Account through the Azure Portal and set up your Key Vault following the instructions on this post: https://azure.microsoft.com/en-us/documentation/articles/key-vault-get-started/ . Make sure to permit 'get' and 'unwrapkey' options to the key you create using the following Powershell command:
+- Create a Storage Account through the Azure Portal
+- Set up your Key Vault following the instructions on this post: https://azure.microsoft.com/en-us/documentation/articles/key-vault-get-started/. Make sure to permit 'get' and 'unwrapkey' options to the key you create using the following Powershell command:
 
 ```
   Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 853csbtd-485b-45f3-98f7-ec2301b7b44d -PermissionsToKeys get,unwrapkey
