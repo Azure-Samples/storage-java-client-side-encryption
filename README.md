@@ -1,10 +1,10 @@
 ---
 services: storage, keyvault
-platforms: java, c#
+platforms: java
 author: woodp
 ---
 
-# Getting Started with Azure Client Side Encryption in Java and C#
+# Getting Started with Azure Client Side Encryption in Java
 
 Azure Client Side Encryption Sample - Demonstrates how to use encryption along with Azure Key Vault integration for the Azure Blob service.
 
@@ -14,23 +14,18 @@ Note: If you don't have a Microsoft Azure subscription you can get a FREE trial 
 
 Instructions:
 
-	1.  Create a Storage Account through the Azure Portal and set up your Key Vault following the instructions on this post: https://azure.microsoft.com/en-us/documentation/articles/key-vault-get-started/
+- Create a Storage Account through the Azure Portal and set up your Key Vault following the instructions on this post: https://azure.microsoft.com/en-us/documentation/articles/key-vault-get-started/ . Make sure to permit 'get' and 'unwrapkey' options to the key you create using the following Powershell command:
 
-	2. For the .net sample, open the App.config file and set "StorageConnectionString", "KVClientId", "KVClientKey", "VaultUri" and optionally "KeyID"
+```
+  Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 853csbtd-485b-45f3-98f7-ec2301b7b44d -PermissionsToKeys get,unwrapkey
+```
 
-	3. Set breakpoints and run the project
-
-	4. For the java sample, download "Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files" for your JDK/JRE
-
-		- [Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files for JDK/JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
-
-		- [Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files for JDK/JRE 7](http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html)
-
-	5. Extract the jar files and place them in ${java.home}/jre/lib/security/
-
-	5. Open the Utility.java file and set "storageConnectionString", "vaultURL", "AuthClientId", "AuthClientSecret" and optionally "keyVaultKeyID"
-
-	6. Set breakpoints and run the project
+- Download "Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files" for your JDK/JRE
+	- [Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files for JDK/JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
+	- [Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files for JDK/JRE 7](http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html)
+- Extract the jar files and place them in ${java.home}/jre/lib/security/
+- Open the Utility.java file and set "storageConnectionString", "vaultURL", "AuthClientId", "AuthClientSecret" and optionally "keyVaultKeyID"
+- Set breakpoints and run the project
 
 
 ## More information
